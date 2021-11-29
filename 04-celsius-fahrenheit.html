@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+	<title>Opdracht 4:celsius en fahrenheit</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<button onclick="antwoordC()">Omzetten van C naar F</button>
+<button onclick="antwoordF()">Omzetten van F naar C</button>
+
+<script type="text/javascript">
+
+"use strict"
+
+function antwoordC() {
+	
+	let antwoordenC = prompt("Hoeveel graden Celsius wil je ingeven en omzetten naar Fahrenheit?");
+	let geheugenC = antwoordenC;
+	antwoordenC = controle(antwoordenC);
+
+	if (antwoordenC == true) {
+		let temperatuurC = (geheugenC*9)/5 + 32;
+		alert(`${geheugenC}° Celsius is ${temperatuurC}° Fahrenheit`);
+	}
+
+	function controle(ontvangenC) {
+	if (ontvangenC == null) {
+		document.write("U heeft geannuleerd!");
+	}
+	else if (ontvangenC.length == 0) {
+		document.write("U heeft niets ingegeven...");
+	}
+	else if (isNaN(ontvangenC)) {
+		document.write("U heeft geen getal ingegeven!");
+	}
+	else {
+
+		return true;
+	}
+	}
+	}
+
+function antwoordF() {
+	
+	let antwoordenF = prompt("Hoeveel graden Fahrenheit wil je ingeven en omzetten naar Celsius?");
+	let geheugenF = antwoordenF;
+	antwoordenF = controle(antwoordenF);
+
+	if (antwoordenF == true) {
+		let temperatuurF = ((geheugenF - 32)*5)/9;
+		alert(`${geheugenF}° Fahrenheit is ${temperatuurF}° Celius`);
+	}
+
+	function controle(ontvangenF) {
+	if (ontvangenF == null) {
+		document.write("U heeft geannuleerd!");
+	}
+	else if (ontvangenF.length == 0) {
+		document.write("U heeft niets ingegeven...");
+	}
+	else if (isNaN(ontvangenF)) {
+		document.write("U heeft geen getal ingegeven!");
+	}
+	else {
+
+		return true;
+	}
+	}
+	}
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<title>Opdracht 2: dag van de week</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script type="text/javascript">
+
+"use strict"
+
+let datum = new Date();
+let dag = datum.getDay();
+
+let dagBenamingen = ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"];
+
+let vandaag = dagBenamingen[dag].substring();
+document.write(`<p> Vandaag is "${vandaag}". </p>`);
+
+if (vandaag == "zondag" | "zaterdag") {
+	document.write("<p> Het is weekend, even bekomen. </p>");
+}
+else {
+	document.write("<p> Het is een werkdag, aan de slag dus. </p>");
+}
+
+</script>
+
+</body>
+</html>

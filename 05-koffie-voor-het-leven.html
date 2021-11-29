@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Oefening 5 - Koffie voor het leven</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	
+
+<script type="text/javascript">
+
+"use strict"	
+
+berekenHoeveelheid();
+
+	function berekenHoeveelheid () {
+
+	let ingave1 = prompt("Wat is uw geboortejaar?");
+	let ingave2 = prompt("Hoe oud denkt u te worden?");
+	let ingave3 = prompt("Hoeveel koppen koffie drinkt u per dag?");
+
+	controle(ingave1, ingave2, ingave3);
+
+	function controle() {
+	if (ingave1.length == 0 || ingave2.length == 0 || ingave3.length == 0 || ingave1 == null || ingave2 == null || ingave3 == null || isNaN(ingave1) || isNaN(ingave2) ||  isNaN(ingave3)) {
+		document.write("<p> U heeft niets geldig ingegeven! </p>");
+	}
+
+	else {
+		tonen(ingave1, ingave2, ingave3);
+		function tonen() {
+		let datum = new Date();
+		let jaar = datum.getFullYear();
+		let geboorteJaar = ingave1;
+		let geschatteLeeftijd = ingave2;
+		let aantal = ingave3;
+		let leeftijd = jaar - geboorteJaar;
+		let resultaat = (geschatteLeeftijd - leeftijd) * aantal * 365;
+		document.write(`<p> Je bent nu ${leeftijd}. Tegen ${aantal} koppen koffie per dag zal je ${resultaat} koppen koffie drinken als je ${geschatteLeeftijd} jaar oud zal worden. </p>`);
+
+		}
+	}
+	}
+	}
+
+
+
+
+</script>
+</body>
+</html>
