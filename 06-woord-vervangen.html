@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>oefening 6 - formulier</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<form id="formulier">
+
+<h1>Vervang het woord</h1>
+
+<p>
+	<label for="zin">Zin</label>
+	<input type="text" name="zin" id="zin">
+	<span class="error" id="zin_error"></span>
+</p>
+
+<p>
+	<label for="zoek">Zoek dit woord</label>
+	<input type="text" name="zoek" id="zoek">
+</p>
+
+<p>
+	<label for="vervangen">Dit woord komt in de plaats</label>
+	<input type="text" name="vervangen" id="vervangen">
+</p>
+
+<p>
+	<label for="knop"> <button onclick="verzend()">Vervang</button> </label> 
+
+</p>
+
+
+<p>
+	<label for="nieuw">De nieuwe zin:</label>
+	<input type="text" name="nieuw" id="nieuw">
+
+</p>
+
+</form>
+
+
+	<script type="text/javascript">
+
+	"use strict"
+	
+		
+		let correct = true;
+
+
+		function verzend() {
+			let zinTxt = document.getElementById("zin").value;
+			
+			if (zinTxt.length == 0) {
+				document.getElementById("zin_error").innerHTML = alert("Vul iets in!!");
+				correct = false;
+			} 
+			else {
+
+				vervangWoord();
+
+				function vervangWoord() {
+
+					zinTxt = document.getElementById("zin").value;
+					let zoekTxt = document.getElementById("zoek").value;
+					let vervangwoord = document.getElementById("vervangen").value;
+
+					
+					let locatie = zinTxt.indexOf(zoekTxt);
+					let lengte = zoekTxt.length; 
+					let lengte2 = zinTxt.length;
+					let locatie2 = locatie + lengte;
+					let vervangen1 = zinTxt.substring(0, locatie); 
+					let vervangen2 = zinTxt.substring(locatie2, lengte2); 
+					let nieuweZin = vervangen1 + vervangwoord + vervangen2;
+		
+					document.getElementById("nieuw").value = nieuweZin;
+					document.getElementById("zin").value = zinTxt;
+					document.getElementById("zoek").value = zoekTxt;
+
+					correct = true;
+
+				}
+			}
+
+
+		}
+		
+
+	</script>
+
+</body>
+</html>
